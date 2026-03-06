@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingredient Rating</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #c3da8e;
+            color: rgb(16, 6, 6);
+            text-align: center;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(72, 173, 94, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Main Section */
+        main {
+            padding: 2rem;
+        }
+
+        /* Food Gallery Section */
+        #foodGallery {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        #foodGallery h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #c51c1c;
+        }
+
+        .food-items {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .food-item {
+            text-align: center;
+            max-width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        .food-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            background-color: white;
+            padding: 10px;
+        }
+
+        .food-item:hover {
+            transform: scale(1.1);
+        }
+
+        .food-item p {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #bd1717;
+        }
+        .hidden {
+            display: none;
+        }
+
+        /* Rating Form Section */
+        #ratingFormSection {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        #ratingForm {
+            display: inline-block;
+            text-align: left;
+            background: rgb(227, 151, 155);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        #ratingForm label {
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        #ratingForm input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #100707;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        #ratingForm button {
+            width: 100%;
+            padding: 0.7rem;
+            background-color: #5a1049;
+            color: rgb(229, 221, 221);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #ratingForm button:hover {
+            background-color: #320c30;
+        }
+
+        /* Rating Result */
+        #result {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #e4f1c6;
+            border: 1px solid #dcedc8;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #result h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        #result p {
+            font-size: 1.2rem;
+            color: #459748 ;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: rgb(232, 227, 227);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ingredient Rating Tool</h1>
+    </header>
+    <main>
+        <!-- Food Item Section -->
+        <section id="foodGallery">
+            <h2>Explore Ingredients</h2>
+            <div class="food-items">
+                <div class="food-item">
+                    <img src="images/sugar.webp" alt="Sugar" />
+                    <p>Sugar</p>
+                </div>
+                <div class="food-item">
+                    <img src="images/th.jpg" alt="Salt" />
+                    <p>Salt</p>
+                </div>
+                <div class="food-item">
+                    <img src="images/th (1).jpg" alt="Citric Acid" />
+                    <p>Citric Acid</p>
+                </div>
+                <div class="food-item">
+                    <img src="images/intro-1669222410.jpg" alt="Xanthan Gum" />
+                    <p>Xanthan Gum</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ingredient Rating Form -->
+        <section id="ratingFormSection">
+            <h2>Get Ingredient Rating</h2>
+            <form id="ratingForm">
+                <label for="ingredientName">Enter Ingredient Name:</label>
+                <input type="text" id="ingredientName" placeholder="e.g., sugar, salt" required />
+                <button type="submit">Get Rating</button>
+            </form>
+        </section>
+
+        <!-- Rating Result -->
+        <div id="result" class="hidden">
+            <h2>Ingredient Rating</h2>
+            <p id="ratingOutput"></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Ingredient Rating Tool</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
